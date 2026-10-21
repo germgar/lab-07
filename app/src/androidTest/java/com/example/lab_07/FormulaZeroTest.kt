@@ -82,6 +82,16 @@ class FormulaZeroTest {
 
         // return to home screen
         composeTestRule
+            .onNodeWithTag("clearAllButton")
+            .performClick()
+
+        // verify race appears
+        composeTestRule
+            .onNodeWithText("John Driver")
+            .assertDoesNotExist()
+
+        // return to home screen
+        composeTestRule
             .onNodeWithTag("backButton")
             .performClick()
 
